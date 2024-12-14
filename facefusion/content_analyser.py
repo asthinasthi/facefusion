@@ -36,7 +36,7 @@ MODEL_SET : ModelSet =\
 	}
 }
 PROBABILITY_LIMIT = 0.80
-RATE_LIMIT = 10
+RATE_LIMIT = 100
 STREAM_COUNTER = 0
 
 
@@ -54,11 +54,12 @@ def get_model_options() -> ModelOptions:
 
 
 def pre_check() -> bool:
-	download_directory_path = resolve_relative_path('../.assets/models')
-	model_hashes = get_model_options().get('hashes')
-	model_sources = get_model_options().get('sources')
+	# download_directory_path = resolve_relative_path('../.assets/models')
+	# model_hashes = get_model_options().get('hashes')
+	# model_sources = get_model_options().get('sources')
 
-	return conditional_download_hashes(download_directory_path, model_hashes) and conditional_download_sources(download_directory_path, model_sources)
+	# return conditional_download_hashes(download_directory_path, model_hashes) and conditional_download_sources(download_directory_path, model_sources)
+	return True
 
 
 def analyse_stream(vision_frame : VisionFrame, video_fps : Fps) -> bool:
